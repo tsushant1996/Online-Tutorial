@@ -1,0 +1,57 @@
+.nav.navbar{
+
+    width: 300px;
+    max-height: 250px;
+    overflow-y: scroll;
+    border: 2 px solid black;
+
+}
+
+.heading{
+    display:block;
+    background-color: #00c853!important;
+    padding-left: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 25px;
+    color: white;
+    
+    
+}
+
+li {
+    text-align: center;
+    display: block;
+    border-bottom: 1px solid grey;
+    border-left: 1px solid grey;
+    background-color: #6c757d!important;
+}
+
+
+a{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px;
+    color: white;
+    text-decoration: none; 
+}
+a:hover{
+    font-size: 22px;
+    color: blue;
+    
+}
+.col-md-8 {
+    height: 500px;
+    border-width:1px;
+    border-style:solid;
+    border-color:grey;
+}
+
+p{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+    
+}
+
+.col-md-3{
+    width: 320px;
+}
+

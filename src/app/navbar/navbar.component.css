@@ -1,0 +1,51 @@
+.navbar.navbar-inverse.navbar-fixed-top{
+    background-color: #616161;
+}
+
+li a {
+    
+    font-size: 18px;
+    display: block;
+    font-family: Verdana,sans-serif;
+    padding-right: 8px ;
+    color: white;
+
+   
+  }
+a.navbar-brand {
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding-right: 10px;
+    font-size: 20px;
+    
+}  
+
+a {
+    font-size: 18px;
+    display: block;
+    font-family: Verdana,sans-serif;
+    padding-right: 8px ;
+    color: white; 
+}
+i.glyphicon.glyphicon-home.navbar-brand{
+    color: white; 
+
+}
+
+a:hover{
+    color: #fff!important;
+    background-color: #4CAF50!important;
+    transition: background-color .3s,color .15s,box-shadow .3s,opacity 0.3s;
+}
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus{
+    background-color: #4CAF50!important;
+}
+
+
+
+
+
+
+
+

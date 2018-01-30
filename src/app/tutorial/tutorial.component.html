@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col-md-3">
+    <ul class="nav navbar">
+      <li class="heading">
+        {{tutorials.subject}}
+      </li>
+
+      <div class="keys" *ngFor="let tutorial of tutorials.SubjectTutorial">
+
+        <a (click)="displayTutorial(tutorial._id)">
+          <li routerLinkActive="active">{{tutorial.tutorialKey}}</li>
+        </a>
+      </div>
+
+    </ul>
+  </div>
+
+
+
+  <div class="col-md-8" *ngFor="let tute of tumorials.SubjectTutorial">
+  
+           <p [innerHtml]="tute.tutorialValue" ></p> 
+
+  </div>
+</div>

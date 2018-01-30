@@ -1,0 +1,35 @@
+<h1>{{ score }}</h1>
+<form #a="ngForm" (ngSubmit)="submitTest(a)"   >
+  <div class="form-group">
+    <div *ngFor="let question of questions"  class="question-border col-xs-12 col-sm-6 col-md-8">
+      
+      <p>{{ question.ques_text }}</p>
+      <div class="radio">
+        <label>
+          <input type="radio" ngModel #ans="ngModel" [name]="question.ques_text" [value]="question.ques_option1">{{ question.ques_option1 }}</label>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" ngModel #ans="ngModel" [name]="question.ques_text" [value]="question.ques_option2">{{ question.ques_option2 }}</label>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" ngModel #ans="ngModel" [name]="question.ques_text" [value]="question.ques_option3">{{ question.ques_option3 }}</label>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" ngModel #ans="ngModel" [name]="question.ques_text" [value]="question.ques_option4">{{ question.ques_option4 }}</label>
+      </div>
+       <br>
+       <br>
+    </div>
+
+  </div>
+   <div *ngIf="isTrue">
+    <button type="submit" class="btn btn-primary col-xs-12 col-sm-6 col-md-8" >Submit test</button>
+   </div>
+  <div *ngIf="!isTrue">
+    <button  class="btn btn-primary col-xs-12 col-sm-6 col-md-8" (click) = "takeAnother()" >Take another test</button>
+  </div>
+ 
+</form>
