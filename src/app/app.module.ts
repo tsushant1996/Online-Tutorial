@@ -54,7 +54,6 @@ import { SubjectSelectionComponent } from './subject-selection/subject-selection
   ],
   imports: [
     BrowserModule,
-    AngularFireModule.initializeApp(environment.firebase, 'angular-auth-firebase'),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     HttpModule,
