@@ -41,7 +41,7 @@ displayForm() {
 
 //Submit form
 
-OnSubmit(f, body: HTMLInputElement) {
+OnSubmit(f) {
 
 
 this.service.addDiscussion(f,this.user)

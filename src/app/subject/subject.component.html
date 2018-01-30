@@ -1,7 +1,7 @@
 <!-- Three columns of text below the carousel -->
 <div class="row">
   <div class="col-lg-4">
-    <a (click)="onClick()" routerLink="">
+    <a  routerLink="">
       <img class="img-circle" src="http://cmeimg-a.akamaihd.net/640/photos.demandstudios.com/getty/article/64/119/497829044.jpg"
         alt="Generic placeholder image" width="140" height="140">
     </a>
@@ -50,7 +50,7 @@
   </div>
   <div class="col-md-4">
       <h2>Select Your  Subject </h2>
-      <form #f="ngForm" (ngSubmit)="submit(f)">
+      <form #f="ngForm" (ngSubmit)=" OnSubmit(f)">
           <div class="form-group">
            <h3> <label for="sel1">Select list:</label></h3>
             <select ngModel #subject="ngModel" class="form-control" name="subjectSelect" id="sel1">
