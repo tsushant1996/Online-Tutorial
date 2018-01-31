@@ -1,4 +1,4 @@
-<h1 *ngIf="!isTrue" >Your &nbsp;{{ score }}</h1>
+<h1 *ngIf="!isTrue" >Your &nbsp; Score &nbsp;{{ score }}</h1>
 <form #a="ngForm" (ngSubmit)="submitTest(a)"   >
   <div class="form-group">
     <div *ngFor="let question of questions"  class="question-border col-xs-12 col-sm-6 col-md-8">
