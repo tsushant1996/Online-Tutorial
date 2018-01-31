@@ -28,7 +28,7 @@
       <div class="form-group">
         <label for="sel1">Select Subject:</label>
         <select ngModel #subject="ngModel" class="form-control" name="subjectSelect" id="sel1">
-          <option value=""></option>
+         
           <option *ngFor="let subject of subjects" [value]="subject._id">{{ subject.subject }}</option>
         </select>
       </div>
