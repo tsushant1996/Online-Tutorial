@@ -24,12 +24,27 @@ export class TutorialComponent implements OnInit {
 
     this.service.getTutorial(this.subject)
      .subscribe(res =>  this.tutorials = res);
+
+     this.service.getTutorial(this.subject)
+      .subscribe(res => this.displayTutorial(res.SubjectTutorial[0]._id));
+     
+
+
+     
   }
 
+
   displayTutorial(id) {
+    console.log(this.tutorials.SubjectTutorial[0]._id);
 
     this.service.getSingleTutorial(id,this.subject)
      .subscribe(res => this.tumorials = res);
+  }
+
+
+  getFirstTutorial() {
+    console.log(this.tutorials.SubjectTutorial[0]._id);
+    this.displayTutorial(this.tutorials.SubjectTutorial[0]._id);
   }
  
   

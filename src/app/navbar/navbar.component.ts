@@ -8,9 +8,16 @@ import { AuthService } from '../auth.service';
 })
 export class NavbarComponent  {
 
-  constructor(public auth: AuthService) {
-  }
+  isCollapsed  = false;
 
+  constructor(public auth: AuthService) { }
+
+  collapsed(event: any): void {
+    console.log(event);
+  }
+  expanded(event: any): void {
+    console.log(event);
+  }
   logout() {
     this.auth.logout();
   }

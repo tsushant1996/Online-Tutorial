@@ -1,13 +1,16 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+      <button type="button" (click)="isCollapsed = !isCollapsed" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
         aria-controls="navbar">
       </button>
       <i class="glyphicon glyphicon-home navbar-brand"></i>
       <a class="navbar-brand" routerLink="">Online Tutorials</a>
     </div>
-    <div id="navbar" class="collapse navbar-collapse">
+    <div id="navbar" (collapsed)="collapsed($event)"
+    (expanded)="expanded($event)"
+    [collapse]="isCollapsed"
+    class="card card-block card-header" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
         <li routerLinkActive="active">
           <a routerLink='/subject'>Practice</a>
@@ -17,9 +20,6 @@
         </li>
         <li routerLinkActive="active">
           <a routerLink='/subject_select'>Tutorials</a>
-        </li>
-        <li routerLinkActive="active">
-          <a routerLink='/admin'>Admin</a>
         </li>
         <ng-template #anonymousUser>
           <li routerLinkActive="active">
@@ -34,7 +34,7 @@
             <span class="caret"></span>
           </a>
           <ul *dropdownMenu class="dropdown-menu" role="menu">
-            <li role="menuitem" routerLinkActive="active">
+            <li role="menuitem" routerLinkActive="active" class="drop">
               <a class="dropdown-item" (click)="logout()" >Logout</a>
             </li>
           </ul>

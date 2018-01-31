@@ -1,7 +1,7 @@
 .nav.navbar{
 
     width: 300px;
-    max-height: 250px;
+    max-height: 500px;
     overflow-y: scroll;
     border: 2 px solid black;
 
@@ -43,12 +43,20 @@ a:hover{
     border-width:1px;
     border-style:solid;
     border-color:grey;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    max-height: 500px;
+    overflow-y: scroll;
+}
+
+.sub {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 30px;
+    text-align: center;
 }
 
 p{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 15px;
-    
+    font-size: 20px;
 }
 
 .col-md-3{

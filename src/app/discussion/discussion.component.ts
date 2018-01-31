@@ -12,7 +12,7 @@ import { AuthService } from '../auth.service';
 })
 export class DiscussionComponent implements OnInit {
 
-  discussions: any = [];
+  discussions: any[];
   isTrue = false;
   subjects: any = [];
   user: any;
@@ -44,11 +44,29 @@ displayForm() {
 OnSubmit(f) {
 
 
-this.service.addDiscussion(f,this.user)
-  .subscribe(res => console.log('console after getting result', res));
+this.service.addDiscussion(f, this.user)
+  .subscribe(res => console.log('dis',res));
 
   this.service.getDiscussions()
-  .subscribe(res => this.discussions = res);
+   .subscribe(res => this.discussions = res);
+/*
+  let dis: any = {
+    discussion_title: f.value.title,
+    discussion_text: f.value.body,
+     discussion_user: this.user.displayName,
+    discussion_subject: f.value.subjectSelect,
+    discussion_date: new Date(),
+    }
+    this.discussions.push(dis);
+  
+*/
+
+}
+
+getAllDiscussions() {
+
+  this.service.getDiscussions()
+  .subscribe(res => this.discussions.push(res));
 
 
 }

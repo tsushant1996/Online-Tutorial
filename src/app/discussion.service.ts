@@ -77,7 +77,7 @@ export class DiscussionService {
     return this.http.post('/discussion/addDiscussion', JSON.stringify(comment), {
       headers: headers
     })
-      .map(res => res.json());
+      .map(res => console.log('discussion servrice'));
 
 
   }

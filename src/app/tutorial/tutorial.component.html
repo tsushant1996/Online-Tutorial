@@ -16,10 +16,14 @@
   </div>
 
 
-
-  <div class="col-md-8" *ngFor="let tute of tumorials.SubjectTutorial">
+<div class="col-md-8">
+   <p class="sub">{{tutorials.subject}}</p> 
+    <div  *ngFor="let tute of tumorials.SubjectTutorial">
   
-           <p [innerHtml]="tute.tutorialValue" ></p> 
+        <p [innerHtml]="tute.tutorialValue" ></p> 
 
-  </div>
+</div>
+
+</div>
+  
 </div>

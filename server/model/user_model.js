@@ -1,12 +1,12 @@
 var mongoose = require('mongoose');
 var bcrypt = require('bcrypt');
 // Using `mongoose.connect`...
-var promise = mongoose.connect('mongodb://localhost/nodeauth', {
+var promise = mongoose.connect('mongodb://sushant:sushant@ds119688.mlab.com:19688/nodeauth', {
   useMongoClient: true,
   /* other options */
 });
 // Or `createConnection`
-var promise = mongoose.createConnection('mongodb://localhost/nodeauth', {
+var promise = mongoose.createConnection('mongodb://sushant:sushant@ds119688.mlab.com:19688/nodeauth', {
   useMongoClient: true,
   /* other options */
 });

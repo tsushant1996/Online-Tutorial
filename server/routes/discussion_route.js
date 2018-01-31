@@ -37,7 +37,20 @@ router.post('/addDiscussion',function(req,res){
     var sub = req.body;
 
     Discussion.saveDiscussion(sub,function(err){
-      res.status(200);
+      if(err){
+          console.log('err found')
+      }
+      else {
+          Discussion.findDiscussions(function(err,result){
+                    if(err){
+                        console.log('err found in discussion')
+                    }
+                    else {
+                        console.log(result);
+                        res.json(result);
+                    }
+          });
+      }
     });
 
 });

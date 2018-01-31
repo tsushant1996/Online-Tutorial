@@ -1,0 +1,22 @@
+.col-md-4.a{
+    height: 700px;
+    display: block;
+    border-width: 1px;
+    border-style: solid;
+    border-color: grey;
+}
+h1 {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding-bottom: 80px;
+}
+
+.btn-primary{
+        color: #fff;
+        background-color: #337ab7;
+        border-color: #2e6da4;
+        margin-left: 50px;
+        width: 300px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;  
+}
+

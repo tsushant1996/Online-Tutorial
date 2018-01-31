@@ -8,6 +8,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment';
 import { CKEditorModule } from 'ng2-ckeditor';
+import { CollapseModule } from 'ngx-bootstrap'
 
 
 
@@ -32,6 +33,7 @@ import { LoginComponent } from './login/login.component';
 import { AuthService } from './auth.service';
 import { AuthGuard } from './auth-guard.service';
 import { SubjectSelectionComponent } from './subject-selection/subject-selection.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 
@@ -51,6 +53,7 @@ import { SubjectSelectionComponent } from './subject-selection/subject-selection
     AdminComponent,
     LoginComponent,
     SubjectSelectionComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -60,11 +63,12 @@ import { SubjectSelectionComponent } from './subject-selection/subject-selection
     HttpModule,
     CKEditorModule,
     FormsModule,
+    CollapseModule.forRoot(),
     BsDropdownModule.forRoot(),
     RouterModule.forRoot([
       {path: '' , component: HomeComponent },
       {path: 'subject' , component: SubjectComponent },
-      {path: 'admin' , component: AdminComponent },
+      {path: 'admin-sushant' , component: AdminComponent },
       {path: 'tute/:subject' , component: TutorialComponent},
       {path: 'login' , component: LoginComponent },
       {path: 'subject_select' , component: SubjectSelectionComponent },
