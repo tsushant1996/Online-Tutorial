@@ -34,8 +34,8 @@ a{
     text-decoration: none; 
 }
 a:hover{
-    font-size: 22px;
-    color: blue;
+    
+    color:#00c853!important;
     
 }
 .col-md-8 {
