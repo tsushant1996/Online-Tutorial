@@ -17,8 +17,10 @@ export class LoginComponent {
   login() {
 
    this.auth.login();
-   this.auth.user$.subscribe(user => console.log('u',user.displayName));
-   this.router.navigate(['/']);
+   this.auth.user$.subscribe(user => this.router.navigate(['/']));
+    
+
+  
 
   }
 
