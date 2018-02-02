@@ -1,5 +1,10 @@
 <div class="row">
   <div class="col-md-8">
+    <ng-template #noDiscussions>
+      <h1>No discussions yet</h1>
+
+    </ng-template>
+    <div  *ngIf="(discussions.length)>1; else noDiscussions">
 
     <div *ngFor="let discussion of discussions">
       <div class="card">
@@ -17,6 +22,7 @@
 
     </div>
   </div>
+</div>
 
 
   <div class="col-md-4">
