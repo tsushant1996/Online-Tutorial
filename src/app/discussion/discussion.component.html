@@ -4,7 +4,7 @@
       <h1>No discussions yet</h1>
 
     </ng-template>
-    <div  *ngIf="(discussions.length)>1; else noDiscussions">
+    <div  *ngIf="(discussions.length)>0; else noDiscussions">
 
     <div *ngFor="let discussion of discussions">
       <div class="card">
