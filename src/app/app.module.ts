@@ -8,7 +8,8 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment';
 import { CKEditorModule } from 'ng2-ckeditor';
-import { CollapseModule } from 'ngx-bootstrap'
+import { CollapseModule } from 'ngx-bootstrap';
+import { ModalModule } from 'ngx-bootstrap';
 
 
 
@@ -16,7 +17,6 @@ import { AppComponent } from './app.component';
 import { DatePipe } from '@angular/common';
 import { HttpModule } from '@angular/http';
 import { NavbarComponent } from './navbar/navbar.component';
-import { DiscussionFormComponent } from './discussion-form/discussion-form.component';
 import { SubjectComponent } from './subject/subject.component';
 import { FormsModule } from '@angular/forms';
 import { SubjectService } from './subject.service';
@@ -42,7 +42,6 @@ import { FooterComponent } from './footer/footer.component';
   declarations: [
     AppComponent,
     NavbarComponent,
-    DiscussionFormComponent,
     HomeComponent,
     SubjectComponent,
     QuestionComponent,
@@ -63,8 +62,10 @@ import { FooterComponent } from './footer/footer.component';
     HttpModule,
     CKEditorModule,
     FormsModule,
+    ModalModule.forRoot(),
     CollapseModule.forRoot(),
     BsDropdownModule.forRoot(),
+
     RouterModule.forRoot([
       {path: '' , component: HomeComponent },
       {path: 'subject' , component: SubjectComponent },

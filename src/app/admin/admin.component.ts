@@ -27,6 +27,10 @@ export class AdminComponent implements OnInit {
 
   }
 
+  log(x) {
+    console.log(x);
+  }
+
   submit(subject) {
 
     console.log('admin', subject);

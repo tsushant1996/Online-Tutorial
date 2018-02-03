@@ -9,11 +9,11 @@
 
     <div class="form-group">
       <label for="sel1">Select Subject:</label>
-      <select ngModel #subject="ngModel" class="form-control" name="subjectSelect" id="sel1">
+      <select required ngModel #subject="ngModel" class="form-control" name="subjectSelect" id="sel1">
         <option *ngFor="let subject of subjects" [value]="subject._id">{{ subject.subject }}</option>
       </select>
     </div>
-    <button type="submit"  class="btn btn-primary">Submit</button>
+    <button type="submit" [disabled]="!subject.valid" class="btn btn-primary">Submit</button>
   </form>
   </div>
 </div>

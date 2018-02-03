@@ -2,6 +2,9 @@ import { Http } from '@angular/http';
 import { QuestionService } from './../question.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { BsModalService } from 'ngx-bootstrap/modal';
+import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
+import { TemplateRef } from '@angular/core/src/linker/template_ref';
 
 
 
@@ -16,9 +19,10 @@ export class QuestionComponent implements OnInit {
   questions: any = [];
   isTrue = false;
   score: number;
+  modalRef: BsModalRef;
 
-
-  constructor(private questionService: QuestionService, private route: ActivatedRoute, private router: Router) {
+  constructor(private questionService: QuestionService, private route: ActivatedRoute, private router: Router,
+    private modalService: BsModalService) {
 
   }
 
@@ -37,7 +41,8 @@ export class QuestionComponent implements OnInit {
 
 
 
-  submitTest(a) {
+
+  submitTest(a, template: TemplateRef<any>) {
 
     this.isTrue = false;
     let w = 0;
@@ -49,14 +54,18 @@ export class QuestionComponent implements OnInit {
         this.score = w;
 
       }
-     
-
-      console.log(this.score);
+       
+      
+  
 
 
     }
 
   }
+
+
+
+ 
 
   takeAnother() {
     this.router.navigate(['/subject']);

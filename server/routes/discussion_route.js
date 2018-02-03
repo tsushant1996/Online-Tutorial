@@ -36,20 +36,14 @@ router.post('/getSingleDiscussions', function (req, res) {
 router.post('/addDiscussion',function(req,res){
     var sub = req.body;
 
+
     Discussion.saveDiscussion(sub,function(err){
       if(err){
           console.log('err found')
       }
       else {
-          Discussion.findDiscussions(function(err,result){
-                    if(err){
-                        console.log('err found in discussion')
-                    }
-                    else {
-                        console.log(result);
-                        res.json(result);
-                    }
-          });
+       console.log('err not found');
+         
       }
     });
 
