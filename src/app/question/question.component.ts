@@ -42,7 +42,7 @@ export class QuestionComponent implements OnInit {
 
 
 
-  submitTest(a, template: TemplateRef<any>) {
+  submitTest(a) {
 
     this.isTrue = false;
     let w = 0;
