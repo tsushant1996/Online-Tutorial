@@ -4,3 +4,12 @@
         font-size: 15px;
         line-height: 1.5;
 }
+
+select.ng-touched.ng-invalid{
+     border-color:red;   
+
+}
+
+select.ng-touched.ng-valid{
+        border-color: green;
+}

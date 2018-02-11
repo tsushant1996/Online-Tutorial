@@ -71,7 +71,7 @@ module.exports.findByIdentifier = function(id,callback){
     Discussion.findById(id,callback);
 }
 
-module.exports.saveDiscussion = function(dis){
+module.exports.saveDiscussion = function(dis,callback){
     console.log('add discussion',dis);
 
     var dis = new Discussion({discussion_title:dis.fields.title, discussion_text:dis.fields.body, discussion_subject:dis.fields.subject,
@@ -79,13 +79,13 @@ module.exports.saveDiscussion = function(dis){
       
      
 
-     dis.save(function(error){
+     dis.save(function(error,discussions){
          
         if(error){
             console.log('error found');
         }
         else {
-            console.log('no error');
+           console.log('dis',discussions);
         }
      })
      

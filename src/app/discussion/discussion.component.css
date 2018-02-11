@@ -35,3 +35,28 @@ display: block;
     background-color: rgba(0,0,0,.03);
     border: 1px solid rgba(0,0,0,.125);
 }
+select.ng-touched.ng-invalid{
+    border-color:red;   
+
+}
+
+select.ng-touched.ng-valid{
+       border-color: green;
+}
+
+input.ng-touched.ng-invalid{
+    border-color:red;   
+
+}
+
+input.ng-touched.ng-valid{
+       border-color: green;
+}
+textarea.ng-touched.ng-invalid{
+    border-color:red;   
+
+}
+
+textarea.ng-touched.ng-valid{
+       border-color: green;
+}

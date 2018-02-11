@@ -13,7 +13,6 @@ router.get('/getDiscussions', function (req, res) {
     Discussion.findDiscussions(function (err, discussions) {
 
         if (discussions) {
-            console.log(discussions);
             res.json(discussions);
         }
 
@@ -37,12 +36,12 @@ router.post('/addDiscussion',function(req,res){
     var sub = req.body;
 
 
-    Discussion.saveDiscussion(sub,function(err){
+    Discussion.saveDiscussion(sub,function(err,result){
       if(err){
-          console.log('err found')
+          console.log('err found',result)
       }
       else {
-       console.log('err not found');
+       console.log('dis saved',result);
          
       }
     });
@@ -52,13 +51,23 @@ router.post('/addDiscussion',function(req,res){
 router.post('/deleteDiscussion', function (req, res) {
     var im = req.body.fields.subject;
     console.log(im);
+    var  counter = 0;
  
   async.forEach(im,function(id,callback){
 
-    Discussion.deleteDiscussion(id, function (err,result) {
-         
+    Discussion.deleteDiscussion(id, function (err,result,callback) {
+         counter++;
+         callback();
     });
-
+   
+   
+  },function(err){
+      if(err){
+          console.log('err found')
+      }
+      else{
+      console.log('counter',counter);
+      }
   });
   
 });

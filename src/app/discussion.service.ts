@@ -61,7 +61,7 @@ export class DiscussionService {
   //adding discussion
 
   addDiscussion(f, user) {
-   
+
     var comment = {
       fields: {
         subject: f.value.subjectSelect,
@@ -77,7 +77,7 @@ export class DiscussionService {
     return this.http.post('/discussion/addDiscussion', JSON.stringify(comment), {
       headers: headers
     })
-      .map(res => console.log('discussion servrice'));
+      .map(res => res.json());
 
 
   }
@@ -88,7 +88,7 @@ export class DiscussionService {
     var comment = {
       fields: {
         subject: del,
-       
+
 
       }
     }

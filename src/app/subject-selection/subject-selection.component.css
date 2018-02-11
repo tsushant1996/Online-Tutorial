@@ -1,3 +1,12 @@
 .col-md-4.a{
     margin-top: 200px;
 }
+
+select.ng-touched.ng-invalid{
+    border-color:red;   
+
+}
+
+select.ng-touched.ng-valid{
+       border-color: green;
+}

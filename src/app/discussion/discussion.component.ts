@@ -51,14 +51,12 @@ this.service.addDiscussion(f, this.user)
   .subscribe(res => console.log('sushant'));
 
   this.service.getDiscussions()
-   .subscribe(res => console.log(res));
-}
-
-getAllDiscussions() {
-  this.service.getDiscussions()
-  .subscribe(res => this.discussions.push(res));
-
+   .subscribe(res => this.discussions = res);
 }
 
 
+
 }
+
+
+
