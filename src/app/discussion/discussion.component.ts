@@ -5,6 +5,7 @@ import { QuestionService } from '../question.service';
 import { DatePipe } from '@angular/common';
 import { AuthService } from '../auth.service';
 import { Promise, resolve, reject } from 'q';
+import { Server } from 'selenium-webdriver/safari';
 
 
 
@@ -16,43 +17,44 @@ import { Promise, resolve, reject } from 'q';
 export class DiscussionComponent implements OnInit {
 
   discussions: any[];
-  titleName:string;
+  titleName: string;
   isTrue = false;
   subjects: any = [];
   user: any;
+  title: string;
+  subjectSelect: string;
+  body: string;
 
-  constructor(private service: DiscussionService, private subjectService: SubjectService, private questionService:QuestionService,
-  private auth: AuthService) { }
+  constructor(private service: DiscussionService,
+    private subjectService: SubjectService,
+    private questionService: QuestionService,
+    private auth: AuthService) { }
 
   ngOnInit() {
     this.service.getDiscussions()
-      .subscribe(res => this.discussions = res);
+      .subscribe(res => this.discussions = res.result.discussions);
+
+    this.subjectService.getSubjects()
+      .subscribe(res => this.subjects = res);
+
+    this.auth.user$
+      .subscribe(user => this.user = user);
+  }
+
+  displayForm() {
+    this.isTrue = true;
+  }
+
+  OnSubmit(f) {
+    this.service.addDiscussion(f, this.user)
+      .subscribe(res => this.discussions.splice(0, 0, res.result.discussion));
+
+    this.title = '';
+    this.subjectSelect = '';
+    this.body = '';
 
 
-      this.subjectService.getSubjects()
-       .subscribe(res => this.subjects = res);
-
-
-      this.auth.user$
-       .subscribe(user => this.user = user);
-}
-
-displayForm() {
-
- this.isTrue = true;
-}
-
-
-//Submit form
-
-OnSubmit(f) {
-
-this.service.addDiscussion(f, this.user)
-  .subscribe(res => console.log('sushant'));
-
-  this.service.getDiscussions()
-   .subscribe(res => this.discussions = res);
-}
+  }
 
 
 
